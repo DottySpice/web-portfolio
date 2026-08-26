@@ -1,0 +1,220 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 
+==========================================================================
+BASE & LAYOUT (Container, Row, Col)
+========================================================================== 
+*/
+
+.page-wrapper {
+   @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between transition-colors duration-200;
+}
+
+.container {
+   @apply max-w-5xl mx-auto px-6;
+}
+
+.section {
+   @apply space-y-8;
+}
+
+.section-header {
+   @apply border-b border-slate-200 dark:border-slate-800/80 pb-4;
+}
+
+/* Rows (Flexbox) */
+.row {
+   @apply flex flex-wrap items-center;
+}
+
+.row-between {
+   @apply flex flex-wrap items-center justify-between;
+}
+
+.row-start {
+   @apply flex flex-wrap items-center justify-start gap-4;
+}
+
+.row-tags {
+   @apply flex flex-wrap items-center gap-2 pt-2;
+}
+
+/* Cols (Grid) */
+.col-1 {
+   @apply w-full;
+}
+
+.col-2 {
+   @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.col-3 {
+   @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.col-4 {
+   @apply grid grid-cols-2 sm:grid-cols-4 gap-4 text-center;
+}
+
+.col-5 {
+   @apply grid grid-cols-3 sm:grid-cols-5 gap-5 text-center;
+}
+
+/* 
+==========================================================================
+NAVBAR & FOOTER
+========================================================================== 
+*/
+
+.navbar {
+   @apply sticky top-0 z-50 bg-white/85 dark:bg-slate-950/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-200;
+}
+
+.navbar-inner {
+   @apply h-16 flex items-center justify-between;
+}
+
+.navbar-brand {
+   @apply text-lg font-bold tracking-tight text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition;
+}
+
+.navbar-nav {
+   @apply flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300;
+}
+
+.nav-item {
+   @apply hover:text-indigo-600 dark:hover:text-white transition;
+}
+
+.footer {
+   @apply border-t border-slate-200 dark:border-slate-800/80 py-6 text-center text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-950 transition-colors duration-200;
+}
+
+/* 
+==========================================================================
+CARDS & PANELS
+========================================================================== 
+*/
+
+.card {
+   @apply bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm transition-colors duration-200;
+}
+
+.card-interactive {
+   @apply bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex flex-col justify-between shadow-sm hover:border-indigo-300 dark:hover:border-indigo-500/50 hover:shadow-md transition duration-200;
+}
+
+.card-compact {
+   @apply p-4 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm transition-colors duration-200;
+}
+
+.card-banner {
+   @apply bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 text-center space-y-4 shadow-sm transition-colors duration-200;
+}
+
+.card-body {
+   @apply space-y-4;
+}
+
+.card-footer {
+   @apply flex gap-4 mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60;
+}
+
+/* 
+==========================================================================
+BUTTONS & CONTROLS
+========================================================================== 
+*/
+
+.btn {
+   @apply inline-flex items-center justify-center px-5 py-2.5 font-medium rounded-lg text-sm transition shadow-sm cursor-pointer;
+}
+
+.btn-primary {
+   @apply inline-flex items-center justify-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-medium rounded-lg text-sm transition shadow-sm shadow-indigo-500/20 cursor-pointer;
+}
+
+.btn-secondary {
+   @apply inline-flex items-center justify-center px-5 py-2.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 active:bg-slate-200 dark:active:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-lg transition cursor-pointer;
+}
+
+.btn-icon {
+   @apply p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition cursor-pointer;
+}
+
+.btn-link {
+   @apply text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition text-sm font-medium;
+}
+
+.btn-link-muted {
+   @apply text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition text-sm font-medium;
+}
+
+/* 
+==========================================================================
+BADGES & PILLS
+========================================================================== 
+*/
+
+.badge-tag {
+   @apply text-xs bg-indigo-50 dark:bg-indigo-950/40 text-indigo-900 dark:text-indigo-200 px-2.5 py-1 rounded border border-indigo-100 dark:border-indigo-800/40 font-medium;
+}
+
+.badge-status-pill {
+   @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-xs font-semibold;
+}
+
+.badge-success {
+   @apply text-xs font-medium px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800;
+}
+
+.badge-primary {
+   @apply text-xs font-medium px-2.5 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800;
+}
+
+.indicator-pulse {
+   @apply w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse;
+}
+
+/* 
+==========================================================================
+TYPOGRAPHY
+========================================================================== 
+*/
+
+.heading-xl {
+   @apply text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white max-w-2xl leading-tight;
+}
+
+.heading-lg {
+   @apply text-2xl font-bold text-slate-900 dark:text-white tracking-tight;
+}
+
+.heading-md {
+   @apply text-lg font-semibold text-slate-900 dark:text-white;
+}
+
+.heading-sm {
+   @apply font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.text-lead {
+   @apply text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-xl;
+}
+
+.text-muted {
+   @apply text-slate-500 dark:text-slate-400 text-sm leading-relaxed;
+}
+
+.text-caption {
+   @apply text-xs text-slate-500 dark:text-slate-400 mt-1;
+}
+
+.text-accent {
+   @apply text-indigo-600 dark:text-indigo-400;
+}
+
+.text-accent-alt {
+   @apply text-indigo-500;
+}

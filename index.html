@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Portfolio</title>
+
+   <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="page-wrapper">
+   
+   <header class="navbar">
+      <div class="container navbar-inner">
+         <a href="#" class="navbar-brand">dev<span class="text-accent-alt">.</span></a>
+         <div class="flex items-center gap-6">
+            <nav class="navbar-nav">
+               <a href="#projects" class="nav-item">Projects</a>
+               <a href="#skills" class="nav-item">Stack</a>
+            </nav>
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+               <span id="theme-icon">🌙</span>
+            </button>
+         </div>
+      </div>
+   </header>
+
+   <!-- MAIN CONTENT -->
+   <main class="container py-12 space-y-24">
+
+      <!-- HERO SECTION -->
+      <section class="section pt-8">
+         <h1 class="heading-xl">
+            Programmer focused on learning and <span class="text-accent">developing applications</span>, as well as <span class="text-accent">functional</span> and scalable solutions.
+         </h1>
+         <p class="text-lead">
+            Specializing in full-stack web development, database management, mobile development, and more...
+         </p>
+         <div class="row-start pt-2">
+            <a href="#projects" class="btn-primary">View Projects</a>
+         </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="section">
+         <div class="section-header">
+            <h2 class="heading-lg">Featured Projects</h2>
+            <p class="text-muted text-xs sm:text-sm mt-1">Recent work and applications in progress.</p>
+         </div>
+
+         <div class="col-2">
+
+            <!-- Chronicle -->
+            <article class="card-interactive">
+               <div class="card-body">
+                  <div class="row-between">
+                     <h3 class="heading-md">Chronicle - Tracking Time App</h3>
+                     <span class="badge-success">Early Access</span>
+                  </div>
+                  <p class="text-muted">
+                     A minimalist, local-first time tracker for Android, it helps you monitor your daily habits and tasks with persistent background timers.
+                  </p>
+                  <div class="row-tags">
+                     <span class="badge-tag">Flutter</span>
+                     <span class="badge-tag">Android </span>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  <a href="https://github.com/DottySpice/ChronicleApp" target="_blank" class="btn-link">Repository &rarr;</a>
+                  <a href="https://github.com/DottySpice/ChronicleApp/releases/" target="_blank" class="btn-link-muted">Releases</a>
+               </div>
+            </article>
+
+            <!-- UI COMPONENTS -->
+            <article class="card-interactive">
+               <div class="card-body">
+                  <div class="row-between">
+                     <h3 class="heading-md">UI Component Engine</h3>
+                     <span class="badge-primary">In progress</span>
+                  </div>
+                  <p class="text-muted">
+                     A collection of clean, modular components based on Tailwind CSS, ready for production use.
+                  </p>
+                  <div class="row-tags">
+                     <span class="badge-tag">Tailwind CSS</span>
+                     <span class="badge-tag">CSS</span>
+                     <span class="badge-tag">HTML5</span>
+                  </div>
+               </div>
+               <!-- <div class="card-footer">
+                  <a href="#" class="btn-link">Documentation &rarr;</a>
+                  <a href="#" class="btn-link-muted">Source Code</a>
+               </div> -->
+            </article>
+
+         </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="section">
+         <div class="section-header">
+            <h2 class="heading-lg">Technical Stack</h2>
+         </div>
+
+         <div class="col-5">
+            <div class="card-compact">
+               <p class="heading-sm">Frontend</p>
+               <p class="text-caption">HTML, CSS, JS, Tailwind, Bootstrap, Flutter, jQuery, JavaScript</p>
+            </div>
+            <div class="card-compact">
+               <p class="heading-sm">Backend</p>
+               <p class="text-caption">PHP, Python, Java, NodeJs, Dart, REST APIs</p>
+            </div>
+            <div class="card-compact">
+               <p class="heading-sm">Frameworks</p>
+               <p class="text-caption">Laravel</p>
+            </div>
+            <div class="card-compact">
+               <p class="heading-sm">Databases</p>
+               <p class="text-caption">Oracle SQL, MySQL, mongoDB, Supabase</p>
+            </div>
+            <div class="card-compact">
+               <p class="heading-sm">Dev Tools</p>
+               <p class="text-caption">Git, GitHub, VS Code, Android Studio, Postman </p>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <!-- FOOTER -->
+   <footer class="footer">
+      <div class="container">
+         <p>© 2026 Crafted with custom CSS & Tailwind engine.</p>
+      </div>
+   </footer>
+
+   <!-- SCRIPT THEME TOGGLE -->
+   <script>
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const htmlElement = document.documentElement;
+
+
+      function updateIcon() {
+         themeIcon.textContent = htmlElement.classList.contains('dark') ? '☀️' : '🌙';
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+         htmlElement.classList.toggle('dark');
+         updateIcon();
+      });
+
+      updateIcon();
+   </script>
+
+</body>
+
+</html>
